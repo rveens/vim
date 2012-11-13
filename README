@@ -1,0 +1,7 @@
+Installation: 
+
+	git clone git://hithub.com/Rickz0r/vim.git ~/.vim
+
+Create symlink:
+
+	ln -s ~/.vim/vimrc ~./.vimrc

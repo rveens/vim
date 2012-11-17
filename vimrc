@@ -1,4 +1,6 @@
 filetype off
+
+" Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -16,13 +18,22 @@ set title
 set history=1000
 set undolevels=1000
 set mouse=a
+set clipboard=unnamed
+set pastetoggle=<F3>
+set colorcolumn=80
+
 syntax on
 filetype plugin indent on
 
-map <leader>n :NERDTreeToggle<CR>
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
+
+" Moving tabs with leader-n and leader-m
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
 
 let mapleader = ","
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"

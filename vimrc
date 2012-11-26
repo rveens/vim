@@ -4,6 +4,10 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Map leader, should be first.
+let mapleader = ","
+
+set nocompatible " Eclim
 set number
 set foldmethod=indent
 set foldlevel=99
@@ -21,9 +25,13 @@ set mouse=a
 set clipboard=unnamed
 set pastetoggle=<F3>
 set colorcolumn=80
+highlight Colorcolumn ctermbg=2
 
 syntax on
 filetype plugin indent on
+
+" Tagbar
+nmap <F3> :TagbarOpenAutoClose<CR>
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -31,11 +39,17 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 
+" FuzzyFinder
+map <Leader>f :FufFile<Esc>
+map <Leader>b :FufBuffer<Esc>
+map <Leader>c :FufTag<Esc>
+map <Leader>t :FufTaggedFile<Esc>
+
 " Moving tabs with leader-n and leader-m
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
-let mapleader = ","
+let g:Powerline_symbols = 'fancy'
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 

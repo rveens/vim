@@ -30,6 +30,9 @@ highlight Colorcolumn ctermbg=2
 syntax on
 filetype plugin indent on
 
+" NeoComplCache
+let g:neocomplcache_enable_at_startup = 1
+
 " Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
 

@@ -55,3 +55,6 @@
 [submodule "bundle/zope-snipmate-bundle"]
 	path = bundle/zope-snipmate-bundle
 	url = https://github.com/zedr/zope-snipmate-bundle.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git

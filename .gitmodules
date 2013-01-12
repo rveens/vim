@@ -58,3 +58,12 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim
+[submodule "bundle/scrollcolors"]
+	path = bundle/scrollcolors
+	url = https://github.com/vim-scripts/ScrollColors.git
+[submodule "bundle/color-sampler-pack"]
+	path = bundle/color-sampler-pack
+	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git

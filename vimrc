@@ -43,17 +43,25 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 
+" Gundo
+nnoremap <F4> :GundoToggle<CR>
+
 " FuzzyFinder
 map <Leader>f :FufFile<Esc>
-map <Leader>b :FufBuffer<Esc>
-map <Leader>c :FufTag<Esc>
-map <Leader>t :FufTaggedFile<Esc>
+" map <Leader>b :FufBuffer<Esc>
+" map <Leader>c :FufTag<Esc>
+" map <Leader>t :FufTaggedFile<Esc>
+
+"Promt for a command to run
+map <Leader>rp <esc>:PromptVimTmuxCommand<CR>
+"Run last command executed bt RunVimTmuxCommand
+map <Leader>rl <esc>:RunLastVimTmuxCommand<CR>
 
 " Moving tabs with leader-n and leader-m
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
-let g:Powerline_symbols = 'fancy'
+set laststatus=2
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 

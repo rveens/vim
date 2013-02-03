@@ -97,3 +97,6 @@
 [submodule "bundle/vimux"]
 	path = bundle/vimux
 	url = https://github.com/benmills/vimux.git
+[submodule "bundle/sudo.vim"]
+	path = bundle/sudo.vim
+	url = https://github.com/vim-scripts/sudo.vim.git

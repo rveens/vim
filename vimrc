@@ -8,6 +8,8 @@ call pathogen#helptags()
 " Map leader, should be first.
 let mapleader = ","
 
+colorscheme solarized
+
 set nocompatible " Eclim
 set number
 set foldmethod=indent
@@ -24,12 +26,15 @@ set history=1000
 set undolevels=1000
 set mouse=a
 set clipboard=unnamed
-set pastetoggle=<F3>
+set pastetoggle=<F5>
 set colorcolumn=80
 highlight Colorcolumn ctermbg=2
 
 syntax on
 filetype plugin indent on
+
+" Bij python files
+autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup = 1

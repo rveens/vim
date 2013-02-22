@@ -8,7 +8,8 @@ call pathogen#helptags()
 " Map leader, should be first.
 let mapleader = ","
 
-colorscheme desert
+colorscheme solarized
+set background=dark
 
 set nocompatible " Eclim
 set number

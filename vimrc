@@ -8,7 +8,7 @@ call pathogen#helptags()
 " Map leader, should be first.
 let mapleader = ","
 
-colorscheme solarized
+colorscheme desert
 
 set nocompatible " Eclim
 set number
@@ -50,6 +50,9 @@ map <C-n> :tabnew<CR>
 
 " Gundo
 nnoremap <F4> :GundoToggle<CR>
+
+" Powerline
+"let g:Powerline_symbols = 'fancy'
 
 " FuzzyFinder
 map <Leader>f :FufFile<Esc>

@@ -103,3 +103,9 @@
 [submodule "bundle/closetag.vim"]
 	path = bundle/closetag.vim
 	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule "bundle/wombat-font"]
+	path = bundle/wombat-font
+	url = https://github.com/vim-scripts/Wombat.git
+[submodule "bundle/wombat-colorscheme"]
+	path = bundle/wombat-colorscheme
+	url = https://github.com/vim-scripts/Wombat.git

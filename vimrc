@@ -8,21 +8,18 @@ call pathogen#helptags()
 "Map leader, should be first.
 let mapleader = ","
 
-"Colorscheme
-set t_Co=256
-set term=xterm-256color
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
-
-" Eclim
-set nocompatible
-
 "Folding
 set foldmethod=indent
 set foldlevel=1
 set foldnestmax=10
 set nofoldenable
+
+"Colorscheme
+colorscheme solarized
+set background=dark
+set t_Co=256
+set term=xterm-256color
+let g:solarized_termcolors=256
 
 set number
 set nowrap
@@ -91,3 +88,4 @@ inoremap {}     {}
 nnoremap ; :
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+

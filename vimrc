@@ -21,6 +21,10 @@ set t_Co=256
 set term=xterm-256color
 let g:solarized_termcolors=256
 
+"Vim-session
+let g:session_autosave = 1
+let g:session_autoload = 0
+
 set number
 set nowrap
 set hlsearch

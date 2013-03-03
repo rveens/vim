@@ -1,5 +1,5 @@
 " ~/.vim/sessions/default.vim: Vim session script.
-" Created by session.vim 1.5 on 03 March 2013 at 16:03:47.
+" Created by session.vim 1.5 on 03 March 2013 at 16:21:29.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLtT
@@ -23,10 +23,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +3 README
+badd +6 README
+badd +1 ~/.vimrc
 silent! argdel *
 set lines=36 columns=168
-edit README
+edit ~/.vimrc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -41,12 +42,13 @@ setlocal fdl=1
 setlocal fml=1
 setlocal fdn=10
 setlocal nofen
-let s:l = 6 - ((5 * winheight(0) + 17) / 34)
+let s:l = 26 - ((25 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
-normal! 0
+26
+normal! 025l
+lcd ~/.vim
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

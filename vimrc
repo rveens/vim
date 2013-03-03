@@ -1,23 +1,30 @@
 filetype off
 
-" Pathogen
+"Pathogen
 call pathogen#infect()
-" call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" Map leader, should be first.
+"Map leader, should be first.
 let mapleader = ","
 
+"Colorscheme
 set t_Co=256
 set term=xterm-256color
 let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
 
-set nocompatible " Eclim
-set number
+" Eclim
+set nocompatible
+
+"Folding
 set foldmethod=indent
-set foldlevel=99
+set foldlevel=1
+set foldnestmax=10
+set nofoldenable
+
+set number
 set nowrap
 set hlsearch
 set smartcase
@@ -37,39 +44,39 @@ highlight Colorcolumn ctermbg=2
 syntax on
 filetype plugin indent on
 
-" Bij python files
+"Bij python files
 autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
 
-" NeoComplCache
+"NeoComplCache
 let g:neocomplcache_enable_at_startup = 1
 
-" Tagbar
+"Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
 
-" NERDTree
+"NERDTree
 map <F2> :NERDTreeToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 
-" Gundo
+"Gundo
 nnoremap <F4> :GundoToggle<CR>
 
-" Powerline
+"Powerline
 let g:Powerline_symbols = 'fancy'
 
-" FuzzyFinder
+"FuzzyFinder
 map <Leader>f :FufFile<Esc>
-" map <Leader>b :FufBuffer<Esc>
-" map <Leader>c :FufTag<Esc>
-" map <Leader>t :FufTaggedFile<Esc>
+"map <Leader>b :FufBuffer<Esc>
+"map <Leader>c :FufTag<Esc>
+"map <Leader>t :FufTaggedFile<Esc>
 
 "Promt for a command to run
 map <Leader>rp <esc>:PromptVimTmuxCommand<CR>
 "Run last command executed bt RunVimTmuxCommand
 map <Leader>rl <esc>:RunLastVimTmuxCommand<CR>
 
-" Moving tabs with leader-n and leader-m
+"Moving tabs with leader-n and leader-m
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 

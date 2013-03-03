@@ -109,3 +109,9 @@
 [submodule "bundle/wombat-colorscheme"]
 	path = bundle/wombat-colorscheme
 	url = https://github.com/vim-scripts/Wombat.git
+[submodule "bundle/powerline-fonts"]
+	path = bundle/powerline-fonts
+	url = https://github.com/Lokaltog/powerline-fonts.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git

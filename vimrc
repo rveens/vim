@@ -14,6 +14,10 @@ set foldlevel=1
 set foldnestmax=10
 set nofoldenable
 
+"Case insensitive search
+set smartcase
+set ignorecase
+
 "Colorscheme
 colorscheme solarized
 set background=dark
@@ -28,7 +32,6 @@ let g:session_autoload = 0
 set number
 set nowrap
 set hlsearch
-set smartcase
 set incsearch
 set hidden
 set nobackup

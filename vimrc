@@ -29,6 +29,12 @@ let g:solarized_termcolors=256
 let g:session_autosave = 1
 let g:session_autoload = 0
 
+"Help off
+noremap <F1> <Esc>
+
+"Select all text
+"map <Leader>a ggVG
+
 set number
 set nowrap
 set hlsearch
@@ -95,4 +101,3 @@ inoremap {}     {}
 nnoremap ; :
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-

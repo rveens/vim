@@ -8,11 +8,24 @@ call pathogen#helptags()
 "Map leader, should be first.
 let mapleader = ","
 
+" I can type :help on my own, thanks.
+noremap <F1> <Esc>
+
 "Folding
 set foldmethod=indent
 set foldlevel=1
 set foldnestmax=10
 set nofoldenable
+
+"Nu ga ik hardcore
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+vnoremap <Up> <NOP>
+vnoremap <Down> <NOP>
+vnoremap <Left> <NOP>
+vnoremap <Right> <NOP>
 
 "Case insensitive search
 set smartcase
@@ -33,7 +46,7 @@ let g:session_autoload = 0
 noremap <F1> <Esc>
 
 "Select all text
-"map <Leader>a ggVG
+map <Leader>s ggVG
 
 set number
 set nowrap
@@ -49,13 +62,16 @@ set mouse=a
 set clipboard=unnamed
 set pastetoggle=<F5>
 set colorcolumn=80
-highlight Colorcolumn ctermbg=2
 
 syntax on
 filetype plugin indent on
+set ofu=syntaxcomplete#Complete
 
 "Bij python files
 autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
+
+"Remove highlight after search
+noremap <Leader>c :nohl<CR>
 
 "NeoComplCache
 let g:neocomplcache_enable_at_startup = 1

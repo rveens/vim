@@ -1,0 +1,12 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Last	/home/rick/oef/python/google-python-exercises/basic/list1.py	/^def Last(t):$/;"	f
+front_x	/home/rick/oef/python/google-python-exercises/basic/list1.py	/^def front_x(words):$/;"	f
+main	/home/rick/oef/python/google-python-exercises/basic/list1.py	/^def main():$/;"	f
+match_ends	/home/rick/oef/python/google-python-exercises/basic/list1.py	/^def match_ends(words):$/;"	f
+sort_last	/home/rick/oef/python/google-python-exercises/basic/list1.py	/^def sort_last(tuples):$/;"	f
+test	/home/rick/oef/python/google-python-exercises/basic/list1.py	/^def test(got, expected):$/;"	f

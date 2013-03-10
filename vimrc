@@ -16,7 +16,7 @@ set foldmethod=indent
 set foldlevel=1
 set foldnestmax=10
 set nofoldenable
- 
+
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling
 set sidescrolloff=15 	" Number of cols from horizontal edge to start scrolling

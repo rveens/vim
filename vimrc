@@ -54,6 +54,7 @@ noremap <F1> <Esc>
 map <Leader>s ggVG
 
 set number
+set cursorline
 set nowrap
 set hlsearch
 set incsearch

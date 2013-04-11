@@ -12,10 +12,13 @@ let mapleader = ","
 noremap <F1> <Esc>
 
 "Folding
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=1
 set foldnestmax=10
 set nofoldenable
+
+"Spelling
+"setlocal spell spelllang=nl "Geeft errors bij startup
 
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling

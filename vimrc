@@ -86,9 +86,6 @@ autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
 "Remove highlight after search
 noremap <Leader>c :nohl<CR>
 
-"NeoComplCache
-let g:neocomplcache_enable_at_startup = 1
-
 "Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
 
@@ -109,6 +106,21 @@ map <Leader>f :FufFile<Esc>
 "map <Leader>b :FufBuffer<Esc>
 "map <Leader>c :FufTag<Esc>
 "map <Leader>t :FufTaggedFile<Esc>
+
+"UltiSnips
+let g:UltiSnipsExpandTrigger='<c-b>'
+let g:UltiSnipsJumpForwardTrigger='<c-b>'
+let g:UltiSnipsJumpBackwardTrigger='<c-v>'
+
+"YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"Open quickfix window
+map <Leader>q <esc>:lopen<CR>
 
 "Promt for a command to run
 map <Leader>rp <esc>:PromptVimTmuxCommand<CR>

@@ -41,6 +41,7 @@ vnoremap <Right> <NOP>
 
 "vim-Notes
 let g:notes_directory='~/Dropbox/Notes'
+let g:notes_title_sync='rename_file'
 
 "Case insensitive search
 set smartcase
@@ -85,6 +86,9 @@ set ofu=syntaxcomplete#Complete
 
 "Bij python files
 autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
+
+"Append Semicolon and come back
+inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
 
 "Remove highlight after search
 noremap <Leader>c :nohl<CR>

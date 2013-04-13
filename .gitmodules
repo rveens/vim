@@ -148,3 +148,12 @@
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "bundle/ult.vim"]
+	path = bundle/ult.vim
+	url = https://github.com/vim-scripts/utl.vim.git
+[submodule "bundle/utl.vim"]
+	path = bundle/utl.vim
+	url = https://github.com/vim-scripts/utl.vim.git
+[submodule "bundle/vim-shell"]
+	path = bundle/vim-shell
+	url = https://github.com/xolox/vim-shell.git

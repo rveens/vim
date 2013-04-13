@@ -39,6 +39,9 @@ vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
+"vim-Notes
+let g:notes_directory='~/Dropbox/Notes'
+
 "Case insensitive search
 set smartcase
 set ignorecase

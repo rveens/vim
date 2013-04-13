@@ -80,6 +80,10 @@ set clipboard=unnamed
 set pastetoggle=<F5>
 set colorcolumn=80
 
+inoremap jk <esc>
+map 0 ^
+nmap ,w :w!<cr>
+
 syntax on
 filetype plugin indent on
 set ofu=syntaxcomplete#Complete

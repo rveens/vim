@@ -3,6 +3,20 @@
 History of Changes
 ******************
 
+*2.2.5* *1.7.13*
+
+
+2.2.5 / 1.7.13 (Nov. 25, 2012)
+==============================
+
+Eclim:
+   - 1.7.13 and above will now support Eclipse 3.8 as well as 3.7.
+
+   - Fix |:ProjectGrep| and |:ProjectTodo| to search in all of the
+     project's links as well.
+
+   - Other minor bug fixes.
+
 *2.2.4* *1.7.12*
 
 

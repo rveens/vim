@@ -19,6 +19,7 @@ set nofoldenable
 
 "Spelling
 "setlocal spell spelllang=nl "Geeft errors bij startup
+"
 
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling
@@ -38,6 +39,9 @@ vnoremap <Up> <NOP>
 vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
+
+"eclim
+"let g:EclimCompletionMethod = 'omnifunc'
 
 "vim-Notes
 let g:notes_directory='~/Dropbox/Notes'
@@ -86,7 +90,10 @@ nmap ,w :w!<cr>
 
 syntax on
 filetype plugin indent on
-set ofu=syntaxcomplete#Complete
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+"set ofu=syntaxcomplete#Complete
 
 "Bij python files
 autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
@@ -101,6 +108,8 @@ noremap <Leader>c :nohl<CR>
 nmap <F3> :TagbarOpenAutoClose<CR>
 
 "NERDTree
+set autochdir
+let NERDTreeChDirMode=2
 map <F2> :NERDTreeToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
@@ -131,10 +140,11 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 0
 
-let g:ycm_allow_changing_updatetime = 0
+"ListToggle
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
 
-"Open quickfix window
-map <Leader>q <esc>:lopen<CR>
+"let g:ycm_allow_changing_updatetime = 0
 
 "Promt for a command to run
 map <Leader>rp <esc>:PromptVimTmuxCommand<CR>

@@ -121,6 +121,9 @@ nnoremap <F4> :GundoToggle<CR>
 "Powerline
 let g:Powerline_symbols = 'fancy'
 
+"PDF
+:command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
+
 "FuzzyFinder
 map <Leader>f :FufFile<Esc>
 "map <Leader>b :FufBuffer<Esc>
@@ -131,20 +134,32 @@ map <Leader>f :FufFile<Esc>
 "let g:UltiSnipsExpandTrigger='<c-b>'
 "let g:UltiSnipsJumpForwardTrigger='<c-b>'
 "let g:UltiSnipsJumpBackwardTrigger='<c-v>'
+ "let g:snips_trigger_key='<c-space>'
+
+" Ctrl-Space for completions. Heck Yeah!
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+	    \ "\<lt>C-n>" :
+	    \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+	    \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+	    \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
 
 "YCM
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+"let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_min_num_of_chars_for_completion = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_cache_omnifunc = 0
 
 "ListToggle
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
-"let g:ycm_allow_changing_updatetime = 0
+let g:ycm_allow_changing_updatetime = 0
 
 "Promt for a command to run
 map <Leader>rp <esc>:PromptVimTmuxCommand<CR>
@@ -166,3 +181,7 @@ inoremap {}     {}
 nnoremap ; :
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+"Added by android-vim:
+set tags+=/home/rick/.vim/tags
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+let g:SuperTabDefaultCompletionType = 'context'

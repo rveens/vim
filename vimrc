@@ -8,6 +8,10 @@ call pathogen#helptags()
 "Map leader, should be first.
 let mapleader = ","
 
+"Moving code blocks
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+
 " I can type :help on my own, thanks.
 noremap <F1> <Esc>
 
@@ -41,19 +45,20 @@ vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
 "eclim
-"let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimCompletionMethod = 'omnifunc'
 
 "vim-Notes
 let g:notes_directory='~/Dropbox/Notes'
 let g:notes_title_sync='rename_file'
 
 "Case insensitive search
-set smartcase
 set ignorecase
+set smartcase
 
 "Colorscheme
+"colo xoria256
 colorscheme solarized
-set background=dark
+set background=light
 set t_Co=256
 set term=xterm-256color
 let g:solarized_termcolors=256
@@ -75,6 +80,7 @@ set hlsearch
 set incsearch
 set hidden
 set nobackup
+set nowritebackup
 set noswapfile
 set title
 set history=1000
@@ -93,16 +99,16 @@ filetype plugin indent on
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-"set ofu=syntaxcomplete#Complete
+set ofu=syntaxcomplete#Complete
 
 "Bij python files
-autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 "Append Semicolon and come back
 inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
 
 "Remove highlight after search
-noremap <Leader>c :nohl<CR>
+noremap <Leader>n :nohl<CR>
 
 "Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
@@ -115,7 +121,11 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 
+" Multiple Cursors
+let g:multi_cursor_next_key="\<C-m>"
+
 "Gundo
+set undofile
 nnoremap <F4> :GundoToggle<CR>
 
 "Powerline
@@ -130,12 +140,6 @@ map <Leader>f :FufFile<Esc>
 "map <Leader>c :FufTag<Esc>
 "map <Leader>t :FufTaggedFile<Esc>
 
-"UltiSnips
-"let g:UltiSnipsExpandTrigger='<c-b>'
-"let g:UltiSnipsJumpForwardTrigger='<c-b>'
-"let g:UltiSnipsJumpBackwardTrigger='<c-v>'
- "let g:snips_trigger_key='<c-space>'
-
 " Ctrl-Space for completions. Heck Yeah!
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 	    \ "\<lt>C-n>" :
@@ -146,14 +150,13 @@ imap <C-@> <C-Space>
 
 "YCM
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-"let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_min_num_of_chars_for_completion = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_cache_omnifunc = 0
+"let g:ycm_cache_omnifunc = 0
 
 "ListToggle
 let g:lt_location_list_toggle_map = '<leader>l'
@@ -166,10 +169,6 @@ map <Leader>rp <esc>:PromptVimTmuxCommand<CR>
 "Run last command executed bt RunVimTmuxCommand
 map <Leader>rl <esc>:RunLastVimTmuxCommand<CR>
 
-"Moving tabs with leader-n and leader-m
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
-
 set laststatus=2
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
@@ -181,7 +180,3 @@ inoremap {}     {}
 nnoremap ; :
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-"Added by android-vim:
-set tags+=/home/rick/.vim/tags
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-let g:SuperTabDefaultCompletionType = 'context'

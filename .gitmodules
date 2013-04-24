@@ -181,3 +181,15 @@
 [submodule "bundle/vim-android"]
 	path = bundle/vim-android
 	url = https://github.com/bpowell/vim-android.git
+[submodule "bundle/colo-jellybeans"]
+	path = bundle/colo-jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/xoria256"]
+	path = bundle/xoria256
+	url = https://github.com/vim-scripts/xoria256.vim.git
+[submodule "bundle/vim-git-log"]
+	path = bundle/vim-git-log
+	url = https://github.com/kablamo/vim-git-log.git
+[submodule "bundle/colo-wombat256mod"]
+	path = bundle/colo-wombat256mod
+	url = https://github.com/michalbachowski/vim-wombat256mod.git

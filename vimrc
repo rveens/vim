@@ -22,8 +22,7 @@ set foldnestmax=10
 set nofoldenable
 
 "Spelling
-"setlocal spell spelllang=nl "Geeft errors bij startup
-"
+setlocal spell spelllang=nl "Geeft errors bij startup
 
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling
@@ -113,6 +112,9 @@ noremap <Leader>n :nohl<CR>
 "Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
 
+"TaskList
+map <leader>v <Plug>TaskList
+
 "NERDTree
 set autochdir
 let NERDTreeChDirMode=2
@@ -163,6 +165,9 @@ let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 let g:ycm_allow_changing_updatetime = 0
+
+" Y hetzelfde als andere hoofdletters
+map Y y$
 
 "Promt for a command to run
 map <Leader>rp <esc>:PromptVimTmuxCommand<CR>

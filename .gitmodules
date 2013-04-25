@@ -193,3 +193,6 @@
 [submodule "bundle/colo-wombat256mod"]
 	path = bundle/colo-wombat256mod
 	url = https://github.com/michalbachowski/vim-wombat256mod.git
+[submodule "bundle/Command-T"]
+	path = bundle/Command-T
+	url = https://github.com/wincent/Command-T.git

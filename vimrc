@@ -101,7 +101,7 @@ let g:syntastic_enable_signs=1
 set ofu=syntaxcomplete#Complete
 
 "Bij python files
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
 
 "Append Semicolon and come back
 inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
@@ -124,7 +124,7 @@ map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 
 " Multiple Cursors
-let g:multi_cursor_next_key="\<C-m>"
+"let g:multi_cursor_next_key="\<C-m>"
 
 "Gundo
 set undofile

@@ -150,6 +150,9 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 	    \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
 
+"MRU
+map <Leader>r :MRU<CR>
+
 "YCM
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_min_num_of_chars_for_completion = 0

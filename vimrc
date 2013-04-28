@@ -100,7 +100,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 set ofu=syntaxcomplete#Complete
 
-"Bij python files
+set expandtab tabstop=8 shiftwidth=8
 autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
 
 "Append Semicolon and come back
@@ -162,6 +162,7 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_cache_omnifunc = 0
+map <Leader>g :YcmCompleter GoToDefinition<CR>
 
 "ListToggle
 let g:lt_location_list_toggle_map = '<leader>l'

@@ -202,3 +202,15 @@
 [submodule "bundle/vim-mru"]
 	path = bundle/vim-mru
 	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "bundle/colo-wombat"]
+	path = bundle/colo-wombat
+	url = https://github.com/vim-scripts/Wombat.git
+[submodule "bundle/colo-wombat256"]
+	path = bundle/colo-wombat256
+	url = https://github.com/vim-scripts/wombat256.vim.git
+[submodule "bundle/colo-vividchalk"]
+	path = bundle/colo-vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "bundle/indentLine"]
+	path = bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine.git

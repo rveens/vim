@@ -100,8 +100,8 @@ let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 set ofu=syntaxcomplete#Complete
 
-"Bij python files
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+set expandtab tabstop=8 shiftwidth=8
+autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
 
 "Append Semicolon and come back
 inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
@@ -150,6 +150,9 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 	    \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
 
+"MRU
+map <Leader>r :MRU<CR>
+
 "YCM
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_min_num_of_chars_for_completion = 0
@@ -159,6 +162,7 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_cache_omnifunc = 0
+map <Leader>g :YcmCompleter GoToDefinition<CR>
 
 "ListToggle
 let g:lt_location_list_toggle_map = '<leader>l'

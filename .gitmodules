@@ -27,7 +27,7 @@
 	url = https://github.com/honza/snipmate-snippets.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
+	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/tComment"]
 	path = bundle/tComment
 	url = https://github.com/vim-scripts/tComment.git
@@ -199,3 +199,18 @@
 [submodule "bundle/vim-startify"]
 	path = bundle/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
+[submodule "bundle/vim-mru"]
+	path = bundle/vim-mru
+	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "bundle/colo-wombat"]
+	path = bundle/colo-wombat
+	url = https://github.com/vim-scripts/Wombat.git
+[submodule "bundle/colo-wombat256"]
+	path = bundle/colo-wombat256
+	url = https://github.com/vim-scripts/wombat256.vim.git
+[submodule "bundle/colo-vividchalk"]
+	path = bundle/colo-vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "bundle/indentLine"]
+	path = bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine.git

@@ -124,7 +124,7 @@ map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 
 " Multiple Cursors
-let g:multi_cursor_next_key="\<C-m>"
+"let g:multi_cursor_next_key="\<C-m>"
 
 "Gundo
 set undofile

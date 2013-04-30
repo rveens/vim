@@ -90,6 +90,7 @@ set pastetoggle=<F5>
 set colorcolumn=80
 
 inoremap jk <esc>
+vmap jk <esc>
 map 0 ^
 nmap ,w :w!<cr>
 
@@ -101,7 +102,7 @@ let g:syntastic_enable_signs=1
 set ofu=syntaxcomplete#Complete
 
 set expandtab tabstop=8 shiftwidth=8
-autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 "Append Semicolon and come back
 inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
@@ -122,9 +123,6 @@ map <F2> :NERDTreeToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
-
-" Multiple Cursors
-"let g:multi_cursor_next_key="\<C-m>"
 
 "Gundo
 set undofile
@@ -151,7 +149,7 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 imap <C-@> <C-Space>
 
 "MRU
-map <Leader>r :MRU<CR>
+map <Leader>h :MRU<CR>
 
 "YCM
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']

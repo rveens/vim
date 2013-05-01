@@ -141,25 +141,24 @@ map <Leader>f :FufFile<Esc>
 "map <Leader>t :FufTaggedFile<Esc>
 
 " Ctrl-Space for completions. Heck Yeah!
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-	    \ "\<lt>C-n>" :
-	    \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-	    \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-	    \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
+"inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+	    "\ "\<lt>C-n>" :
+	    "\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+	    "\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+	    "\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+"imap <C-@> <C-Space>
 
 "MRU
 map <Leader>h :MRU<CR>
 
 "YCM
-let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+"let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_min_num_of_chars_for_completion = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_cache_omnifunc = 0
 map <Leader>g :YcmCompleter GoToDefinition<CR>
 
 "ListToggle
@@ -167,9 +166,6 @@ let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 let g:ycm_allow_changing_updatetime = 0
-
-" Y hetzelfde als andere hoofdletters
-map Y y$
 
 "Promt for a command to run
 map <Leader>rp <esc>:PromptVimTmuxCommand<CR>

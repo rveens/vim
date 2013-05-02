@@ -8,10 +8,6 @@ call pathogen#helptags()
 "Map leader, should be first.
 let mapleader = ","
 
-"Moving code blocks
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
-
 " I can type :help on my own, thanks.
 noremap <F1> <Esc>
 
@@ -56,11 +52,11 @@ set smartcase
 
 "Colorscheme
 "colo xoria256
-colorscheme solarized
-set background=light
+colorscheme jellybeans
+"set background=light
 set t_Co=256
 set term=xterm-256color
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 
 "Vim-session
 let g:session_autosave = 1
@@ -73,7 +69,6 @@ noremap <F1> <Esc>
 map <Leader>s ggVG
 
 set number
-set cursorline
 set nowrap
 set hlsearch
 set incsearch
@@ -90,7 +85,6 @@ set pastetoggle=<F5>
 set colorcolumn=80
 
 inoremap jk <esc>
-vmap jk <esc>
 map 0 ^
 nmap ,w :w!<cr>
 
@@ -142,22 +136,22 @@ map <Leader>f :FufFile<Esc>
 
 " Ctrl-Space for completions. Heck Yeah!
 "inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-	    "\ "\<lt>C-n>" :
-	    "\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-	    "\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-	    "\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+            "\ "\<lt>C-n>" :
+            "\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            "\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            "\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 "imap <C-@> <C-Space>
 
 "MRU
 map <Leader>h :MRU<CR>
 
 "YCM
-"let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_min_num_of_chars_for_completion = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 map <Leader>g :YcmCompleter GoToDefinition<CR>
 

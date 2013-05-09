@@ -13,12 +13,13 @@ noremap <F1> <Esc>
 
 "Folding
 set foldmethod=syntax
-set foldlevel=1
-set foldnestmax=10
+"set foldlevel=1
+"set foldnestmax=10
 set nofoldenable
 
 "Spelling
 setlocal spell spelllang=nl "Geeft errors bij startup
+set spell!
 
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling
@@ -95,7 +96,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 set ofu=syntaxcomplete#Complete
 
-set expandtab tabstop=8 shiftwidth=8
+"set expandtab tabstop=8 shiftwidth=8
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 "Append Semicolon and come back
@@ -120,6 +121,7 @@ map <C-n> :tabnew<CR>
 
 "Gundo
 set undofile
+set undodir=~/.vimundobackup
 nnoremap <F4> :GundoToggle<CR>
 
 "Powerline

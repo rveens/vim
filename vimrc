@@ -53,7 +53,7 @@ set smartcase
 
 "Colorscheme
 "colo xoria256
-colorscheme jellybeans
+colorscheme vividchalk
 "set background=light
 set t_Co=256
 set term=xterm-256color

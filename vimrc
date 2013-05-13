@@ -107,6 +107,8 @@ noremap <Leader>n :nohl<CR>
 
 "Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
+let g:tagbar_compact = 1
+let g:tagbar_indent = 1
 
 "TaskList
 map <leader>v <Plug>TaskList
@@ -168,7 +170,9 @@ map <Leader>rp <esc>:PromptVimTmuxCommand<CR>
 "Run last command executed bt RunVimTmuxCommand
 map <Leader>rl <esc>:RunLastVimTmuxCommand<CR>
 
+"Statusline
 set laststatus=2
+
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 

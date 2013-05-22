@@ -220,3 +220,6 @@
 [submodule "bundle/vim-javascript-indent"]
 	path = bundle/vim-javascript-indent
 	url = https://github.com/vim-scripts/JavaScript-Indent.git
+[submodule "bundle/vim-jscomplete"]
+	path = bundle/vim-jscomplete
+	url = https://github.com/teramako/jscomplete-vim.git

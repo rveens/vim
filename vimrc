@@ -121,6 +121,9 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 
+"Niji"
+let g:niji_match_all_filetypes = 1
+
 "Gundo
 set undofile
 set undodir=~/.vimundobackup

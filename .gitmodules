@@ -223,3 +223,9 @@
 [submodule "bundle/vim-jscomplete"]
 	path = bundle/vim-jscomplete
 	url = https://github.com/teramako/jscomplete-vim.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/vim-niji"]
+	path = bundle/vim-niji
+	url = https://github.com/amdt/vim-niji.git

@@ -18,8 +18,8 @@ set foldmethod=syntax
 set nofoldenable
 
 "Spelling
-setlocal spell spelllang=nl "Geeft errors bij startup
-set spell!
+"setlocal spell spelllang=nl "Geeft errors bij startup
+"set spell!
 
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling

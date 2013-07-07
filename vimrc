@@ -78,14 +78,14 @@ set nobackup
 set nowritebackup
 set noswapfile
 set title
-set history=1000
-set undolevels=1000
+set history=100
+set undolevels=100
 set mouse=a
 set clipboard=unnamed
 set pastetoggle=<F5>
 set colorcolumn=80
 
-inoremap jk <esc>
+inoremap kj <esc>
 map 0 ^
 nmap ,w :w!<cr>
 

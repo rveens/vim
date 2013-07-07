@@ -114,7 +114,7 @@
 	url = https://github.com/Lokaltog/powerline-fonts.git
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
+	url = https://github.com/Lokaltog/powerline.git
 [submodule "bundle/vim-session.git"]
 	path = bundle/vim-session.git
 	url = https://github.com/xolox/vim-session.git
@@ -141,7 +141,7 @@
 	url = https://github.com/xolox/vim-notes.git
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/UltiSnips"]
 	path = bundle/UltiSnips
 	url = https://github.com/vim-scripts/UltiSnips.git

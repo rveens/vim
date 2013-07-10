@@ -34,6 +34,7 @@ NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'SirVer/ultisnips'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 
 NeoBundle 'TaskList.vim'
 NeoBundle 'mru.vim'
@@ -157,7 +158,7 @@ map <leader>v <Plug>TaskList
 "NERDTree
 set autochdir
 let NERDTreeChDirMode=2
-map <F2> :NERDTreeToggle<CR>
+map <F2> :NERDTreeTabsToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>

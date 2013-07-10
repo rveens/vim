@@ -23,6 +23,7 @@ vim-airline
 vim-easymotion
 vim-gitgutter
 vim-misc
+vim-nerdtree-tabs
 vim-repeat
 vim-session
 vim-shell

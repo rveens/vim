@@ -150,6 +150,8 @@
 :NERDTreeFind	NERD_tree.txt	/*:NERDTreeFind*
 :NERDTreeFromBookmark	NERD_tree.txt	/*:NERDTreeFromBookmark*
 :NERDTreeMirror	NERD_tree.txt	/*:NERDTreeMirror*
+:NERDTreeMirrorToggle	vim-nerdtree-tabs.txt	/*:NERDTreeMirrorToggle*
+:NERDTreeTabsToggle	vim-nerdtree-tabs.txt	/*:NERDTreeTabsToggle*
 :NERDTreeToggle	NERD_tree.txt	/*:NERDTreeToggle*
 :NeoBundle	neobundle.txt	/*:NeoBundle*
 :NeoBundleCheck	neobundle.txt	/*:NeoBundleCheck*
@@ -769,6 +771,7 @@ neobundle-unite-sources	neobundle.txt	/*neobundle-unite-sources*
 neobundle-usage	neobundle.txt	/*neobundle-usage*
 neobundle-variables	neobundle.txt	/*neobundle-variables*
 neobundle.txt	neobundle.txt	/*neobundle.txt*
+nerdtree-tabs	vim-nerdtree-tabs.txt	/*nerdtree-tabs*
 public-api-for-vim-session-plug-in	session.txt	/*public-api-for-vim-session-plug-in*
 sample-session-script	session.txt	/*sample-session-script*
 session-commands	session.txt	/*session-commands*
@@ -859,6 +862,7 @@ unite-action-neobundle-search	neobundle.txt	/*unite-action-neobundle-search*
 unite-kind-neobundle	neobundle.txt	/*unite-kind-neobundle*
 vS	surround.txt	/*vS*
 vgS	surround.txt	/*vgS*
+vim-nerdtree-tabs	vim-nerdtree-tabs.txt	/*vim-nerdtree-tabs*
 vim-sub-autoclose	youcompleteme.txt	/*vim-sub-autoclose*
 xolox#misc#buffer#is_empty()	misc.txt	/*xolox#misc#buffer#is_empty()*
 xolox#misc#buffer#lock()	misc.txt	/*xolox#misc#buffer#lock()*

@@ -1,9 +1,51 @@
 filetype off
 
-"Pathogen
-call pathogen#infect()
-"call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set nocompatible
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#rc(expand('~/.vim/bundle'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Bundles
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'tpope/vim-vividchalk'
+NeoBundle 'wincent/Command-T'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'Valloric/ListToggle'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'paradigm/TextObjectify'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'xolox/vim-session'
+NeoBundle 'xolox/vim-shell'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'bingaman/vim-sparkup'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'nvie/vim-togglemouse'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'SirVer/ultisnips'
+
+NeoBundle 'TaskList.vim'
+NeoBundle 'mru.vim'
+NeoBundle 'closetag.vim'
+NeoBundle 'ScrollColors'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'L9'
+NeoBundle 'ctags.vim'
+
+filetype plugin indent on
+
+NeoBundleCheck
 
 "Map leader, should be first.
 let mapleader = ","
@@ -53,7 +95,7 @@ set smartcase
 
 "Colorscheme
 "colo xoria256
-colorscheme vividchalk
+colorscheme jellybeans
 "set background=light
 set t_Co=256
 set term=xterm-256color
@@ -90,11 +132,9 @@ map 0 ^
 nmap ,w :w!<cr>
 
 syntax on
-filetype plugin indent on
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-let g:syntastic_c_checkers=['ycm']
 set ofu=syntaxcomplete#Complete
 
 "set expandtab tabstop=8 shiftwidth=8
@@ -155,12 +195,12 @@ map <Leader>h :MRU<CR>
 
 "YCM
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-let g:ycm_min_num_of_chars_for_completion = 0
+let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 0
 map <Leader>g :YcmCompleter GoToDefinition<CR>
 
 "ListToggle

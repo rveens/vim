@@ -61,8 +61,8 @@ set foldmethod=syntax
 set nofoldenable
 
 "Spelling
-"setlocal spell spelllang=nl "Geeft errors bij startup
-"set spell!
+setlocal spell spelllang=nl "Geeft errors bij startup
+set spell!
 
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling
@@ -162,9 +162,6 @@ map <F2> :NERDTreeTabsToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
-
-"Niji"
-let g:niji_match_all_filetypes = 1
 
 "Gundo
 set undofile

@@ -15,7 +15,6 @@ NeoBundle 'tpope/vim-vividchalk'
 NeoBundle 'wincent/Command-T'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Valloric/ListToggle'
-NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
@@ -24,6 +23,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'xolox/vim-session'
 NeoBundle 'xolox/vim-shell'
 NeoBundle 'xolox/vim-misc'
@@ -35,6 +35,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 NeoBundle 'TaskList.vim'
 NeoBundle 'mru.vim'
@@ -43,6 +44,7 @@ NeoBundle 'ScrollColors'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'L9'
 NeoBundle 'ctags.vim'
+NeoBundle 'RelOps'
 
 filetype plugin indent on
 
@@ -61,8 +63,8 @@ set foldmethod=syntax
 set nofoldenable
 
 "Spelling
-setlocal spell spelllang=nl "Geeft errors bij startup
-set spell!
+"setlocal spell spelllang=nl "Geeft errors bij startup
+"set spell!
 
 "Scrolling
 set scrolloff=8 	" Number of lines from vertical edge to start scrolling
@@ -124,7 +126,7 @@ set title
 set history=100
 set undolevels=100
 set mouse=a
-set clipboard=unnamed
+set clipboard=unnamedplus
 set pastetoggle=<F5>
 set colorcolumn=80
 
@@ -205,7 +207,7 @@ map <Leader>g :YcmCompleter GoToDefinition<CR>
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
-let g:ycm_allow_changing_updatetime = 0
+let g:ycm_allow_changing_updatetime = 1
 
 "Promt for a command to run
 map <Leader>rp <esc>:PromptVimTmuxCommand<CR>

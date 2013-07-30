@@ -2,6 +2,7 @@ Command-T
 FuzzyFinder
 L9
 ListToggle
+RelOps
 ScrollColors
 TaskList.vim
 TextObjectify
@@ -13,16 +14,17 @@ gundo.vim
 jellybeans.vim
 mru.vim
 neobundle.vim
-nerdcommenter
 nerdtree
 syntastic
 tagbar
 tern_for_vim
 ultisnips
 vim-airline
+vim-commentary
 vim-easymotion
 vim-gitgutter
 vim-misc
+vim-multiple-cursors
 vim-nerdtree-tabs
 vim-repeat
 vim-session

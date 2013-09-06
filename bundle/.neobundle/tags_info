@@ -7,6 +7,7 @@ ScrollColors
 TaskList.vim
 TextObjectify
 YouCompleteMe
+argtextobj.vim
 closetag.vim
 ctags.vim
 delimitMate
@@ -20,8 +21,8 @@ tagbar
 tern_for_vim
 ultisnips
 vim-airline
+vim-cmake
 vim-commentary
-vim-easymotion
 vim-gitgutter
 vim-misc
 vim-multiple-cursors

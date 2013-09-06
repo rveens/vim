@@ -20,7 +20,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'paradigm/TextObjectify'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-commentary'
@@ -36,6 +35,8 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'vim-scripts/argtextobj.vim'
+NeoBundle 'vhdirk/vim-cmake'
 
 NeoBundle 'TaskList.vim'
 NeoBundle 'mru.vim'
@@ -133,6 +134,7 @@ set colorcolumn=80
 inoremap kj <esc>
 map 0 ^
 nmap ,w :w!<cr>
+command Wq wq
 
 syntax on
 let g:syntastic_always_populate_loc_list = 1
@@ -145,9 +147,6 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 "Append Semicolon and come back
 inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
-
-"Remove highlight after search
-noremap <Leader>n :nohl<CR>
 
 "Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
@@ -163,7 +162,7 @@ let NERDTreeChDirMode=2
 map <F2> :NERDTreeTabsToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
-map <C-n> :tabnew<CR>
+map <Leader>n :tabnew<CR>
 
 "Gundo
 set undofile

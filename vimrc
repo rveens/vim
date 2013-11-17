@@ -62,8 +62,8 @@ noremap <F1> <Esc>
 
 "Folding
 set foldmethod=syntax
-"set foldlevel=1
-"set foldnestmax=10
+set foldlevel=1
+set foldnestmax=10
 set nofoldenable
 
 "Spelling
@@ -162,6 +162,7 @@ map <leader>v <Plug>TaskList
 "NERDTree
 set autochdir
 let NERDTreeChDirMode=2
+let g:nerdtree_tabs_open_on_gui_startup=0
 map <F2> :NERDTreeTabsToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>

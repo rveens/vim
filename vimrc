@@ -1,6 +1,12 @@
-filetype off
-
+""""""""""""""""""""""""""""""""""""""
+"  Must be first
+""""""""""""""""""""""""""""""""""""""
 set nocompatible
+let mapleader = ","
+
+""""""""""""""""""""""""""""""""""""""
+"  Neobundle plugin management
+""""""""""""""""""""""""""""""""""""""
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -9,73 +15,75 @@ endif
 call neobundle#rc(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Bundles 
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'tpope/vim-vividchalk'
-NeoBundle 'wincent/Command-T'
+" ========== Github.com Bundles ==========
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'SirVer/ultisnips'
 NeoBundle 'Valloric/ListToggle'
+NeoBundle 'Valloric/MatchTagAlways'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'beyondmarc/opengl.vim'
+NeoBundle 'bingaman/vim-sparkup'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'nvie/vim-togglemouse'
+NeoBundle 'paradigm/TextObjectify'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'paradigm/TextObjectify'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'xolox/vim-session'
-NeoBundle 'xolox/vim-shell'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'bingaman/vim-sparkup'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'nvie/vim-togglemouse'
-NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'vim-scripts/argtextobj.vim'
-NeoBundle 'vhdirk/vim-cmake'
-NeoBundle 'beyondmarc/opengl.vim'
 NeoBundle 'tikhomirov/vim-glsl'
-NeoBundle 'Valloric/MatchTagAlways'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-vividchalk'
+NeoBundle 'vhdirk/vim-cmake'
+NeoBundle 'wincent/Command-T'
+NeoBundle 'xolox/vim-misc'
+" NeoBundle 'xolox/vim-session'
+" NeoBundle 'xolox/vim-shell'
 
-NeoBundle 'TaskList.vim'
-NeoBundle 'mru.vim'
-NeoBundle 'closetag.vim'
-NeoBundle 'ScrollColors'
+" ========== Vim.org Bundles ==========
 NeoBundle 'FuzzyFinder'
 NeoBundle 'L9'
-NeoBundle 'ctags.vim'
 NeoBundle 'RelOps'
+NeoBundle 'ScrollColors'
+NeoBundle 'TaskList.vim'
+NeoBundle 'closetag.vim'
+NeoBundle 'ctags.vim'
+NeoBundle 'mru.vim'
 
 filetype plugin indent on
 
 NeoBundleCheck
 
-"Map leader, should be first.
-let mapleader = ","
+""""""""""""""""""""""""""""""""""""""
+"  Vim settings
+""""""""""""""""""""""""""""""""""""""
 
-" I can type :help on my own, thanks.
-noremap <F1> <Esc>
+" ========== Spelling ==========
+setlocal spelllang=nl "Geeft errors bij startup
 
-"Folding
-set foldmethod=syntax
-set foldlevel=1
-set foldnestmax=10
-set nofoldenable
+" ========== Folding ==========
+set foldmethod=syntax   "Folding based on syntax
+set foldcolumn=3	"Reserve space on the left to show folding
+set foldlevelstart=1	"Skip the first folding level
+set foldnestmax=2	"Do not keep folding after 2.
 
-"Spelling
-"setlocal spell spelllang=nl "Geeft errors bij startup
-"set spell!
+" ========== Searching ==========
+set hlsearch   " highlight searches
+set ignorecase " make searches case-insensitive, unless they contain upper-case letters:
+set smartcase  " Only use search case when first letter is case
+set incsearch  " show the `best match so far' as search strings are typed:
+set gdefault   " assume the /g flag on :s substitutions to replace all matches in a line:
+set enc=utf-8  " UTF-8 Default encoding
 
-"Scrolling
-set scrolloff=8 	" Number of lines from vertical edge to start scrolling
-set sidescrolloff=15 	" Number of cols from horizontal edge to start scrolling
-set sidescroll=1 	" Number of cols to scroll at a time
-
-"Nu ga ik hardcore
+" ========== Key Rebinds ==========
+"---Disable F1 for help
+noremap <F1> <Esc>	
+"---Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -88,40 +96,34 @@ vnoremap <Up> <NOP>
 vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
+"---Braces
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+nnoremap ; :
+"---Select all text
+map <Leader>s ggVG
+"---Zero not to the first char, but first word
+map 0 ^
+"---Quick save binding
+nmap <Leader>w :w!<cr>
+"---Prevent typing error when trying to save
+command Wq wq
+"---Append Semicolon and come back. In insert mode
+inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
 
-"eclim
-let g:EclimCompletionMethod = 'omnifunc'
 
-"vim-Notes
-let g:notes_directory='~/Dropbox/Notes'
-let g:notes_title_sync='rename_file'
-
-"Case insensitive search
-set ignorecase
-set smartcase
-
-"Colorscheme
-"colo xoria256
+" Colorscheme
 colorscheme jellybeans
-"set background=light
 set t_Co=256
 set term=xterm-256color
+"set background=light
 "let g:solarized_termcolors=256
-
-"Vim-session
-let g:session_autosave = 1
-let g:session_autoload = 0
-
-"Help off
-noremap <F1> <Esc>
-
-"Select all text
-map <Leader>s ggVG
 
 set number
 set nowrap
-set hlsearch
-set incsearch
+
 set hidden
 set nobackup
 set nowritebackup
@@ -134,32 +136,34 @@ set clipboard=unnamedplus
 set pastetoggle=<F5>
 set colorcolumn=80
 
-inoremap kj <esc>
-map 0 ^
-nmap ,w :w!<cr>
-command Wq wq
-
 syntax on
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-set ofu=syntaxcomplete#Complete
 
-"set expandtab tabstop=8 shiftwidth=8
+" set expandtab tabstop=8 shiftwidth=8
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
-"Append Semicolon and come back
-inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
+" Statusline
+set laststatus=2
 
-"Tagbar
+
+""""""""""""""""""""""""""""""""""""""
+"  Plugin settings
+""""""""""""""""""""""""""""""""""""""
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_enable_signs=1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+
+" Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
 let g:tagbar_compact = 1
 let g:tagbar_indent = 1
 
-"TaskList
+" TaskList
 map <leader>v <Plug>TaskList
 
-"NERDTree
+" NERDTree
 set autochdir
 let NERDTreeChDirMode=2
 let g:nerdtree_tabs_open_on_gui_startup=0
@@ -168,65 +172,34 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <Leader>n :tabnew<CR>
 
-"Gundo
+" Gundo
 set undofile
 set undodir=~/.vimundobackup
 nnoremap <F4> :GundoToggle<CR>
 
-"Powerline
-let g:Powerline_symbols = 'fancy'
-
-"PDF
-:command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
-
-"FuzzyFinder
+" FuzzyFinder
 map <Leader>f :FufFile<Esc>
 "map <Leader>b :FufBuffer<Esc>
 "map <Leader>c :FufTag<Esc>
 "map <Leader>t :FufTaggedFile<Esc>
 
-" Ctrl-Space for completions. Heck Yeah!
-"inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            "\ "\<lt>C-n>" :
-            "\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            "\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            "\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-"imap <C-@> <C-Space>
-
-"MRU
+" MRU
 map <Leader>h :MRU<CR>
 
-"YCM
-let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 0
-map <Leader>g :YcmCompleter GoToDefinition<CR>
-
-"ListToggle
+" ListToggle
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
+" Vim-Notes
+let g:notes_directories = ['~/Dropbox/Notes']
+
+" YCM
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_extra_conf.py'
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_allow_changing_updatetime = 1
-
-"Promt for a command to run
-map <Leader>rp <esc>:PromptVimTmuxCommand<CR>
-"Run last command executed bt RunVimTmuxCommand
-map <Leader>rl <esc>:RunLastVimTmuxCommand<CR>
-
-"Statusline
-set laststatus=2
-
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-nnoremap ; :
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+map <Leader>g :YcmCompleter GoToDefinition<CR>
+map <Leader>d :YcmCompleter GoToDeclaration<CR>

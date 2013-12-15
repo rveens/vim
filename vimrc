@@ -21,7 +21,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'airblade/vim-gitgutter'
+" NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'beyondmarc/opengl.vim'
 NeoBundle 'bingaman/vim-sparkup'
 NeoBundle 'jistr/vim-nerdtree-tabs'
@@ -42,8 +42,11 @@ NeoBundle 'tpope/vim-vividchalk'
 NeoBundle 'vhdirk/vim-cmake'
 NeoBundle 'wincent/Command-T'
 NeoBundle 'xolox/vim-misc'
-" NeoBundle 'xolox/vim-session'
+NeoBundle 'xolox/vim-session'
 " NeoBundle 'xolox/vim-shell'
+" NeoBundle 'xolox/vim-notes'
+NeoBundle "vimoutliner/vimoutliner"
+NeoBundle "octol/vim-cpp-enhanced-highlight"
 
 " ========== Vim.org Bundles ==========
 NeoBundle 'FuzzyFinder'
@@ -63,8 +66,27 @@ NeoBundleCheck
 "  Vim settings
 """"""""""""""""""""""""""""""""""""""
 
-" ========== Spelling ==========
-setlocal spelllang=nl "Geeft errors bij startup
+" ========== General Settings ==========
+set mouse=a			"Enable mouse in all modes
+set clipboard=unnamedplus	"Use +p or +y for system clipboard
+
+" ========== Appearance ==========
+set ttyfast		"Tell vim we have a fast terminal
+set lazyredraw		"Do not redraw while executing macros
+set number		"Show line numbers
+set nowrap		"Do not wrap lines
+syntax on		"Turn on syntax highlighting
+set title		"View filename in title bar
+set colorcolumn=80	"View a column bar at 80 characters
+set laststatus=2	"Always turn on a status line
+set showcmd		"Show (movement) commands u type in the bottom right
+"---Colorscheme
+set t_Co=256		"Tell vim how many colors the terminal has
+colorscheme jellybeans
+"Syntax highlighting test
+set nocursorcolumn
+set nocursorline
+syntax sync minlines=256
 
 " ========== Folding ==========
 set foldmethod=syntax   "Folding based on syntax
@@ -79,6 +101,9 @@ set smartcase  " Only use search case when first letter is case
 set incsearch  " show the `best match so far' as search strings are typed:
 set gdefault   " assume the /g flag on :s substitutions to replace all matches in a line:
 set enc=utf-8  " UTF-8 Default encoding
+
+" ========== Spelling ==========
+setlocal spelllang=nl "Geeft errors bij startup
 
 " ========== Key Rebinds ==========
 "---Disable F1 for help
@@ -101,7 +126,10 @@ inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+"---Remap ; to :
 nnoremap ; :
+"---Also remap <space> to :
+noremap <space> :
 "---Select all text
 map <Leader>s ggVG
 "---Zero not to the first char, but first word
@@ -113,37 +141,19 @@ command Wq wq
 "---Append Semicolon and come back. In insert mode
 inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
 
+" ========== Backup Settings ==========
+set nobackup			"Do not write backup files next to file (and do not leave it around)
+set nowritebackup		"Do attempt to leave a temp backup when overwriting
+set noswapfile			"Do not write swap files next to file
+set undodir=~/.vimundobackup	"vim undo directory
+set undofile			"Turn on undo fom previous vim session
+set undolevels=100		"Undo level history
+set history=100			"Command line history
+set hidden			"Remember buffers when you switch
 
-" Colorscheme
-colorscheme jellybeans
-set t_Co=256
-set term=xterm-256color
-"set background=light
-"let g:solarized_termcolors=256
-
-set number
-set nowrap
-
-set hidden
-set nobackup
-set nowritebackup
-set noswapfile
-set title
-set history=100
-set undolevels=100
-set mouse=a
-set clipboard=unnamedplus
-set pastetoggle=<F5>
-set colorcolumn=80
-
-syntax on
-
+" ========= Autocommands =========
 " set expandtab tabstop=8 shiftwidth=8
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-
-" Statusline
-set laststatus=2
-
 
 """"""""""""""""""""""""""""""""""""""
 "  Plugin settings
@@ -173,8 +183,6 @@ map <C-h> :tabp<CR>
 map <Leader>n :tabnew<CR>
 
 " Gundo
-set undofile
-set undodir=~/.vimundobackup
 nnoremap <F4> :GundoToggle<CR>
 
 " FuzzyFinder
@@ -200,6 +208,6 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_allow_changing_updatetime = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 map <Leader>g :YcmCompleter GoToDefinition<CR>
 map <Leader>d :YcmCompleter GoToDeclaration<CR>

@@ -16,12 +16,14 @@ call neobundle#rc(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ========== Github.com Bundles ==========
+NeoBundle "octol/vim-cpp-enhanced-highlight"
+NeoBundle "vimoutliner/vimoutliner"
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'Valloric/YouCompleteMe'
-" NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'beyondmarc/opengl.vim'
 NeoBundle 'bingaman/vim-sparkup'
 NeoBundle 'jistr/vim-nerdtree-tabs'
@@ -43,20 +45,19 @@ NeoBundle 'vhdirk/vim-cmake'
 NeoBundle 'wincent/Command-T'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
-" NeoBundle 'xolox/vim-shell'
+" NeoBundle 'airblade/vim-gitgutter'
 " NeoBundle 'xolox/vim-notes'
-NeoBundle "vimoutliner/vimoutliner"
-NeoBundle "octol/vim-cpp-enhanced-highlight"
+" NeoBundle 'xolox/vim-shell'
 
 " ========== Vim.org Bundles ==========
-NeoBundle 'FuzzyFinder'
 NeoBundle 'L9'
 NeoBundle 'RelOps'
 NeoBundle 'ScrollColors'
 NeoBundle 'TaskList.vim'
 NeoBundle 'closetag.vim'
 NeoBundle 'ctags.vim'
-NeoBundle 'mru.vim'
+NeoBundle 'vim-scripts/xoria256.vim'
+NeoBundle 'vim-scripts/FuzzyFinder'
 
 filetype plugin indent on
 
@@ -82,11 +83,13 @@ set laststatus=2	"Always turn on a status line
 set showcmd		"Show (movement) commands u type in the bottom right
 "---Colorscheme
 set t_Co=256		"Tell vim how many colors the terminal has
-colorscheme jellybeans
+colorscheme xoria256
 "Syntax highlighting test
 set nocursorcolumn
 set nocursorline
 syntax sync minlines=256
+"---GVim
+set guitablabel=%t
 
 " ========== Folding ==========
 set foldmethod=syntax   "Folding based on syntax
@@ -187,12 +190,8 @@ nnoremap <F4> :GundoToggle<CR>
 
 " FuzzyFinder
 map <Leader>f :FufFile<Esc>
-"map <Leader>b :FufBuffer<Esc>
-"map <Leader>c :FufTag<Esc>
-"map <Leader>t :FufTaggedFile<Esc>
-
-" MRU
-map <Leader>h :MRU<CR>
+let g:fuf_modesDisable = []
+map <Leader>h :FufMruFile<CR>
 
 " ListToggle
 let g:lt_location_list_toggle_map = '<leader>l'
@@ -200,6 +199,10 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " Vim-Notes
 let g:notes_directories = ['~/Dropbox/Notes']
+
+" Vim-Session
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
 " YCM
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_extra_conf.py'

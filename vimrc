@@ -48,6 +48,7 @@ NeoBundle 'xolox/vim-session'
 " NeoBundle 'airblade/vim-gitgutter'
 " NeoBundle 'xolox/vim-notes'
 " NeoBundle 'xolox/vim-shell'
+NeoBundle 'vim-scripts/argtextobj.vim'
 
 " ========== Vim.org Bundles ==========
 NeoBundle 'L9'
@@ -58,6 +59,7 @@ NeoBundle 'closetag.vim'
 NeoBundle 'ctags.vim'
 NeoBundle 'vim-scripts/xoria256.vim'
 NeoBundle 'vim-scripts/FuzzyFinder'
+NeoBundle 'vim-scripts/a.vim'
 
 filetype plugin indent on
 
@@ -92,10 +94,10 @@ syntax sync minlines=256
 set guitablabel=%t
 
 " ========== Folding ==========
-set foldmethod=syntax   "Folding based on syntax
-set foldcolumn=3	"Reserve space on the left to show folding
-set foldlevelstart=1	"Skip the first folding level
-set foldnestmax=2	"Do not keep folding after 2.
+" set foldmethod=syntax   "Folding based on syntax
+" set foldcolumn=3	"Reserve space on the left to show folding
+" set foldlevelstart=1	"Skip the first folding level
+" set foldnestmax=2	"Do not keep folding after 2.
 
 " ========== Searching ==========
 set hlsearch   " highlight searches
@@ -161,6 +163,9 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 """"""""""""""""""""""""""""""""""""""
 "  Plugin settings
 """"""""""""""""""""""""""""""""""""""
+
+" A.vim
+map <leader>a :A<CR>
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1

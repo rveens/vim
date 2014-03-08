@@ -7,7 +7,6 @@ let mapleader = ","
 """"""""""""""""""""""""""""""""""""""
 "  Neobundle plugin management
 """"""""""""""""""""""""""""""""""""""
-
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
@@ -26,13 +25,13 @@ NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'beyondmarc/opengl.vim'
 NeoBundle 'bingaman/vim-sparkup'
-NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'kana/vim-textobj-function'
+NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'paradigm/TextObjectify'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -42,13 +41,10 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-vividchalk'
 NeoBundle 'vhdirk/vim-cmake'
+NeoBundle 'vim-scripts/argtextobj.vim'
 NeoBundle 'wincent/Command-T'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
-" NeoBundle 'airblade/vim-gitgutter'
-" NeoBundle 'xolox/vim-notes'
-" NeoBundle 'xolox/vim-shell'
-NeoBundle 'vim-scripts/argtextobj.vim'
 
 " ========== Vim.org Bundles ==========
 NeoBundle 'L9'
@@ -57,9 +53,9 @@ NeoBundle 'ScrollColors'
 NeoBundle 'TaskList.vim'
 NeoBundle 'closetag.vim'
 NeoBundle 'ctags.vim'
-NeoBundle 'vim-scripts/xoria256.vim'
 NeoBundle 'vim-scripts/FuzzyFinder'
 NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'vim-scripts/xoria256.vim'
 
 filetype plugin indent on
 
@@ -72,6 +68,8 @@ NeoBundleCheck
 " ========== General Settings ==========
 set mouse=a			"Enable mouse in all modes
 set clipboard=unnamedplus	"Use +p or +y for system clipboard
+set wildmenu			"Commandline completion
+set wildmode=longest,list	"Completion like bash
 
 " ========== Appearance ==========
 set ttyfast		"Tell vim we have a fast terminal
@@ -83,24 +81,21 @@ set title		"View filename in title bar
 set colorcolumn=80	"View a column bar at 80 characters
 set laststatus=2	"Always turn on a status line
 set showcmd		"Show (movement) commands u type in the bottom right
+set cursorline		"Highlight line of cursor
 "---Colorscheme
 set t_Co=256		"Tell vim how many colors the terminal has
 colorscheme xoria256
-"Syntax highlighting test
-set nocursorcolumn
-set nocursorline
 syntax sync minlines=256
 "---GVim
 set guitablabel=%t
 
 " ========== Folding ==========
-" set foldmethod=syntax   "Folding based on syntax
+" set foldmethod=syntax "Folding based on syntax
 " set foldcolumn=3	"Reserve space on the left to show folding
 " set foldlevelstart=1	"Skip the first folding level
 " set foldnestmax=2	"Do not keep folding after 2.
 
 " ========== Searching ==========
-set hlsearch   " highlight searches
 set ignorecase " make searches case-insensitive, unless they contain upper-case letters:
 set smartcase  " Only use search case when first letter is case
 set incsearch  " show the `best match so far' as search strings are typed:

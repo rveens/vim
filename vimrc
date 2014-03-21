@@ -8,21 +8,25 @@ let mapleader = ","
 "  Neobundle plugin management
 """"""""""""""""""""""""""""""""""""""
 if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
+	set runtimepath+=$HOME/.vim/bundle/neobundle.vim
 endif
 
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#rc(expand('$HOME/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ========== Github.com Bundles ==========
 NeoBundle "octol/vim-cpp-enhanced-highlight"
 NeoBundle "vimoutliner/vimoutliner"
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'Valloric/ListToggle'
 NeoBundle 'Valloric/MatchTagAlways'
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe', {
+\ 	 'build' : {
+\ 		 'unix' : './install.sh --clang-completer',
+\ 	 },
+\ }
 NeoBundle 'beyondmarc/opengl.vim'
 NeoBundle 'bingaman/vim-sparkup'
 NeoBundle 'kana/vim-textobj-function'
@@ -42,7 +46,11 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-vividchalk'
 NeoBundle 'vhdirk/vim-cmake'
 NeoBundle 'vim-scripts/argtextobj.vim'
-NeoBundle 'wincent/Command-T'
+NeoBundle 'wincent/Command-T', {
+\ 	 'build' : {
+\ 		 'unix' : 'cd ruby/command-t && ruby extconf.rb && make',
+\ 	 },
+\ }
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
 
@@ -145,7 +153,7 @@ inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
 set nobackup			"Do not write backup files next to file (and do not leave it around)
 set nowritebackup		"Do attempt to leave a temp backup when overwriting
 set noswapfile			"Do not write swap files next to file
-set undodir=~/.vimundobackup	"vim undo directory
+set undodir=$HOME/.vimundobackup	"vim undo directory
 set undofile			"Turn on undo fom previous vim session
 set undolevels=100		"Undo level history
 set history=100			"Command line history
@@ -161,6 +169,9 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 " A.vim
 map <leader>a :A<CR>
+
+" Command-t
+map <leader>t :CommandT<CR>
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -198,14 +209,14 @@ let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " Vim-Notes
-let g:notes_directories = ['~/Dropbox/Notes']
+let g:notes_directories = ['$HOME/Dropbox/Notes']
 
 " Vim-Session
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 
 " YCM
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_global_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_global_extra_conf.py'
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_allow_changing_updatetime = 1

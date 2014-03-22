@@ -53,6 +53,7 @@ NeoBundle 'wincent/Command-T', {
 \ }
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
+NeoBundle 'b4winckler/vim-angry'
 
 " ========== Vim.org Bundles ==========
 NeoBundle 'L9'
@@ -78,6 +79,7 @@ set mouse=a			"Enable mouse in all modes
 set clipboard=unnamedplus	"Use +p or +y for system clipboard
 set wildmenu			"Commandline completion
 set wildmode=longest,list	"Completion like bash
+set autochdir			"Change current working directory when a file is opened
 
 " ========== Appearance ==========
 set ttyfast		"Tell vim we have a fast terminal
@@ -148,6 +150,10 @@ nmap <Leader>w :w!<cr>
 command Wq wq
 "---Append Semicolon and come back. In insert mode
 inoremap <leader>' <C-o>m`<C-o>A;<C-o>``
+"---Keybinds for navigating and creating tabs
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <Leader>n :tabnew<CR>
 
 " ========== Backup Settings ==========
 set nobackup			"Do not write backup files next to file (and do not leave it around)
@@ -188,13 +194,9 @@ let g:tagbar_indent = 1
 map <leader>v <Plug>TaskList
 
 " NERDTree
-set autochdir
 let NERDTreeChDirMode=2
 let g:nerdtree_tabs_open_on_gui_startup=0
 map <F2> :NERDTreeTabsToggle<CR>
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
-map <Leader>n :tabnew<CR>
 
 " Gundo
 nnoremap <F4> :GundoToggle<CR>

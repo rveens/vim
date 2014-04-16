@@ -213,6 +213,11 @@ map <Leader>h :FufMruFile<CR>
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
+" Latex-box
+let g:LatexBox_viewer = "evince"
+" let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_autojump = 1
+
 " Vim-Notes
 let g:notes_directories = ['$HOME/Dropbox/Notes']
 

@@ -54,6 +54,8 @@ NeoBundle 'wincent/Command-T', {
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
 NeoBundle 'b4winckler/vim-angry'
+NeoBundle 'Shougo/neocomplete.vim' 
+NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " ========== Vim.org Bundles ==========
 NeoBundle 'L9'
@@ -80,6 +82,7 @@ set clipboard=unnamedplus	"Use +p or +y for system clipboard
 set wildmenu			"Commandline completion
 set wildmode=longest,list	"Completion like bash
 set autochdir			"Change current working directory when a file is opened
+set showmatch			"Jump to matching character if a [ or { i inserted
 
 " ========== Appearance ==========
 set ttyfast		"Tell vim we have a fast terminal
@@ -224,6 +227,7 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_allow_changing_updatetime = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 map <Leader>g :YcmCompleter GoToDefinition<CR>
 map <Leader>d :YcmCompleter GoToDeclaration<CR>

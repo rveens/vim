@@ -96,7 +96,10 @@ set noexpandtab
 set wildmenu 	"Show matching files when tab complete
 "---Colorscheme
 set t_Co=256		"Tell vim how many colors the terminal has
-colorscheme xoria256
+try " Surround in try-catch as it gives an error without plugins
+	colorscheme xoria256
+catch
+endtry
 syntax sync minlines=256
 "---GVim
 set guitablabel=%t

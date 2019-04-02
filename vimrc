@@ -8,54 +8,56 @@ let mapleader = ","
 
 " ===================================
 "  	Vundle plugin management
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " ========== Plugins Start ==========
 
-Plugin 'L9' "Nodig voor gundo
-Plugin 'Raimondi/delimitMate'
-Plugin 'ScrollColors'
-Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/ListToggle'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'mileszs/ack.vim'
-Plugin 'oplatek/Conque-Shell'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/syntastic'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/a.vim'
-Plugin 'xolox/vim-misc' "Nodig voor vim-session
-Plugin 'xolox/vim-session'
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'rdnetto/YCM-Generator'
-Plugin 'vim-scripts/xoria256.vim'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'b4winckler/vim-angry'
-Plugin 'majutsushi/tagbar'
-Plugin 'python-mode/python-mode'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-" Plugin 'zxqfl/tabnine-vim'
-Plugin 'prabirshrestha/async.vim'
-Plugin 'autozimu/LanguageClient-neovim'
+Plug 'vim-scripts/L9'
+Plug 'Raimondi/delimitMate'
+Plug 'vim-scripts/ScrollColors'
+Plug 'SirVer/ultisnips'
+Plug 'Valloric/ListToggle'
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'junegunn/vim-easy-align'
+Plug 'mileszs/ack.vim'
+Plug 'oplatek/Conque-Shell'
+Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/syntastic'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/a.vim'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'rdnetto/YCM-Generator'
+Plug 'vim-scripts/xoria256.vim'
+Plug 'tpope/vim-vividchalk'
+Plug 'nanotech/jellybeans.vim'
+Plug 'b4winckler/vim-angry'
+Plug 'majutsushi/tagbar'
+Plug 'python-mode/python-mode'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" Plug 'zxqfl/tabnine-vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " ========== ??? ==========
-" Plugin 'vim-scripts/FuzzyFinder'
+" Plug 'vim-scripts/FuzzyFinder'
 " 'terryma/vim-multiple-cursors'
 " 'ctags.vim'
 
 " ========== Plugins End ==========
-call vundle#end()
+call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 

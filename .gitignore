@@ -1,4 +1,1 @@
-# Negeer alles uit de bundle map: 
-# Als goed is staat alleen neobundle er in.
-bundle/*
-!bundle/Vundle.vim/
+plugged/

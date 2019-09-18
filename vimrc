@@ -41,7 +41,7 @@ Plug 'tpope/vim-vividchalk'
 Plug 'nanotech/jellybeans.vim'
 Plug 'b4winckler/vim-angry'
 Plug 'majutsushi/tagbar'
-Plug 'python-mode/python-mode'
+" Plug 'python-mode/python-mode'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 " Plug 'zxqfl/tabnine-vim'
@@ -50,6 +50,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
 
 " ========== ??? ==========
 " Plug 'vim-scripts/FuzzyFinder'
@@ -68,8 +70,6 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""
 "  Vim settings
 """"""""""""""""""""""""""""""""""""""
-" Voor todo
-map <Leader>t :tabnew ~/todo.txt<CR>
 
 " ========== General Settings ==========
 set mouse=a			"Enable mouse in all modes
@@ -103,8 +103,6 @@ try " Surround in try-catch as it gives an error without plugins
 catch
 endtry
 syntax sync minlines=256
-"---GVim
-set guitablabel=%t
 
 " ========== Folding ==========
 " set foldmethod=syntax "Folding based on syntax
@@ -144,11 +142,20 @@ map <C-h> :tabp<CR>
 map <Leader>n :tabnew<CR>
 "--- edit vimrc quickly
 map <Leader>v :e $MYVIMRC<CR>
-"--- make
-map <Leader>c :make<CR>
+"--- terminal
+map <C-w>t :terminal<CR>
+"--- tabname small
+set guitablabel=\[%N\]\ %t\ %M 
 
 "-- for exiting insert mode without problems
 inoremap <C-c> <C-[>
+
+"--copy current file location to 
+nmap ,cl :let @+=expand("%:p")<CR>
+nmap ,ct :let @+=expand("%:t")<CR>
+
+"-- clipboard after exit
+autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
 
 " ========== Visual Mode related ==========
 "-- Visual mode pressing * searches for the current selection
@@ -179,6 +186,11 @@ map <leader>a :A<CR>
 " let g:syntastic_alf_checkers = ['sweet']
 " let g:syntastic_alf_sweet_exec = '/home/rick/afst/preparation/tools/sweet/build/src/sweet'
 
+" Fugitive
+nnoremap <silent> ,gs :Gstatus<CR>
+nnoremap <silent> ,gc :Gcommit<CR>
+nnoremap <silent> ,gd :Gdiff<CR>
+
 " Tagbar
 nmap <F3> :TagbarOpenAutoClose<CR>
 let g:tagbar_compact = 1
@@ -186,15 +198,22 @@ let g:tagbar_indent = 1
 
 " NERDTree
 let NERDTreeChDirMode=2
+let NERDTreeHijackNetrw=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 let NERDTreeIgnore = ['\.o$', 'tags']
-map <F2> :NERDTreeTabsToggle<CR>
+map <F2> :NERDTreeFind<CR>
 
 " FZF
 map <Leader>d :Rg<Esc>
 map <Leader>f :BLines<Esc>
 map <Leader>h :History<Esc>
 map <C-p> :Files<Esc>
+map <Leader>t :Tags<Esc>
+map <Leader>t :Tags<Esc>
+map <Leader>gl :Commits<Esc>
+let g:fzf_buffers_jump = 1
+let g:fzf_tags_command = 'ctags -R'
+" let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " Gundo
 nnoremap <F4> :GundoToggle<CR>

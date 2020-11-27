@@ -17,15 +17,16 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'vim-scripts/L9'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-scripts/ScrollColors'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'Valloric/ListToggle'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/vim-easy-align'
 Plug 'mileszs/ack.vim'
 Plug 'oplatek/Conque-Shell'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
 " Plug 'scrooloose/syntastic'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
@@ -52,6 +53,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'kergoth/vim-bitbake'
 
 " ========== ??? ==========
 " Plug 'vim-scripts/FuzzyFinder'
@@ -143,7 +145,7 @@ map <Leader>n :tabnew<CR>
 "--- edit vimrc quickly
 map <Leader>v :e $MYVIMRC<CR>
 "--- terminal
-map <C-w>t :terminal<CR>
+map <C-w>t :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
 "--- tabname small
 set guitablabel=\[%N\]\ %t\ %M 
 
@@ -192,7 +194,7 @@ nnoremap <silent> ,gc :Gcommit<CR>
 nnoremap <silent> ,gd :Gdiff<CR>
 
 " Tagbar
-nmap <F3> :TagbarOpenAutoClose<CR>
+nmap <F3> :TagbarToggle<CR>
 let g:tagbar_compact = 1
 let g:tagbar_indent = 1
 
@@ -207,6 +209,7 @@ map <F2> :NERDTreeFind<CR>
 map <Leader>d :Rg<Esc>
 map <Leader>f :BLines<Esc>
 map <Leader>h :History<Esc>
+map <Leader>b :Buffers<Esc>
 map <C-p> :Files<Esc>
 map <Leader>t :Tags<Esc>
 map <Leader>t :Tags<Esc>
